@@ -226,6 +226,11 @@ class ScrolledFrame(Frame):
         # Call _update_scroll_region() when the interior widget is resized
         self._interior.bind("<Configure>", self._update_scroll_region)
 
+        # Fit the interior widget to the canvas if requested
+        # We don't need to check fit_width here since _resize_interior()
+        # already does.
+        self._resize_interior()
+
         # Scroll to the top-left corner of the canvas
         self.scroll_to_top()
 
@@ -256,8 +261,8 @@ class ScrolledFrame(Frame):
 
     # ------------------------------------------------------------------------
 
-    def _resize_interior(self, event):
-        """Resize the interior widget when the canvas widget is updated."""
+    def _resize_interior(self, event=None):
+        """Resize the interior widget to fit the canvas."""
 
         if self._fit_width and self._interior_id:
             # The current width of the canvas
