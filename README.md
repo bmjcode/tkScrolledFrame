@@ -49,3 +49,5 @@ for row in range(num_rows):
 # Start Tk's event loop
 root.mainloop()
 ```
+
+For detailed documentation, try `python -m pydoc tkscrolledframe`.
