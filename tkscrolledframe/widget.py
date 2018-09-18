@@ -132,7 +132,7 @@ class ScrolledFrame(Frame):
         self.yview = c.yview
         self.yview_moveto = c.yview_moveto
 
-        # Pass our remaining configuration options to Tk
+        # Process our remaining configuration options
         self.configure(**kw)
 
     def __setitem__(self, key, value):
