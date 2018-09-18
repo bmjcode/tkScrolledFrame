@@ -7,11 +7,9 @@ import sys
 
 try:
     # Python 3
-    from tkinter import *
     import tkinter as tk
 except (ImportError):
     # Python 2
-    from Tkinter import *
     import Tkinter as tk
 
 try:
@@ -29,7 +27,7 @@ except (ImportError):
 __all__ = ["ScrolledFrame"]
 
 
-class ScrolledFrame(Frame):
+class ScrolledFrame(tk.Frame):
     """Scrollable Frame widget.
 
     Use display_widget() to set the interior widget. For example,
@@ -55,7 +53,7 @@ class ScrolledFrame(Frame):
     def __init__(self, master=None, **kw):
         """Return a new scrollable frame widget."""
 
-        Frame.__init__(self, master)
+        tk.Frame.__init__(self, master)
 
         # Hold these names for the interior widget
         self._interior = None
@@ -99,9 +97,9 @@ class ScrolledFrame(Frame):
         self.grid_rowconfigure(0, weight=1)
 
         # Canvas to hold the interior widget
-        c = self._canvas = Canvas(self,
-                                  borderwidth=0,
-                                  takefocus=0)
+        c = self._canvas = tk.Canvas(self,
+                                     borderwidth=0,
+                                     takefocus=0)
 
         # Enable scrolling when the canvas has the focus
         self.bind_arrow_keys(c)
@@ -147,7 +145,7 @@ class ScrolledFrame(Frame):
 
         else:
             # Handle everything else normally
-            Frame.configure(self, **{key: value})
+            tk.Frame.configure(self, **{key: value})
 
     # ------------------------------------------------------------------------
 
@@ -180,7 +178,7 @@ class ScrolledFrame(Frame):
             return self._canvas.cget(key)
 
         else:
-            return Frame.cget(self, key)
+            return tk.Frame.cget(self, key)
 
     # Also override this alias for cget()
     __getitem__ = cget
