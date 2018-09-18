@@ -8,22 +8,22 @@ import sys
 try:
     # Python 3
     from tkinter import *
-    from tkinter import Scrollbar as TkScrollbar
+    import tkinter as tk
 except (ImportError):
     # Python 2
     from Tkinter import *
-    from Tkinter import Scrollbar as TkScrollbar
+    import Tkinter as tk
 
 try:
     try:
         # Python 3
-        from tkinter.ttk import Scrollbar as TtkScrollbar
+        import tkinter.ttk as ttk
     except (ImportError):
         # Python 2
-        from ttk import Scrollbar as TtkScrollbar
-    have_ttk = True
+        import ttk
 except (ImportError):
-    have_ttk = False
+    # Can't provide ttk's Scrollbar
+    pass
 
 
 __all__ = ["ScrolledFrame"]
@@ -79,11 +79,14 @@ class ScrolledFrame(Frame):
             scrollbars = self._default_scrollbars
 
         # Whether to use ttk widgets if available
-        if have_ttk and "use_ttk" in kw and kw["use_ttk"]:
-            Scrollbar = TtkScrollbar
+        if "use_ttk" in kw:
+            if ttk and kw["use_ttk"]:
+                Scrollbar = ttk.Scrollbar
+            else:
+                Scrollbar = tk.Scrollbar
             del kw["use_ttk"]
         else:
-            Scrollbar = TkScrollbar
+            Scrollbar = tk.Scrollbar
 
         # Default to a 1px sunken border
         if not "borderwidth" in kw:
