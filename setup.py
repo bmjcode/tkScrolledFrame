@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 NAME = "tkScrolledFrame"
-VERSION = "1.0.2"
+VERSION = "1.0.3"
 AUTHOR = "Benjamin Johnson"
 AUTHOR_EMAIL = "bmjcode@gmail.com"
 DESCRIPTION = "Scrollable frame widget for Tkinter"
