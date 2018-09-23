@@ -99,6 +99,7 @@ class ScrolledFrame(tk.Frame):
         # Canvas to hold the interior widget
         c = self._canvas = tk.Canvas(self,
                                      borderwidth=0,
+                                     highlightthickness=0,
                                      takefocus=0)
 
         # Enable scrolling when the canvas has the focus
