@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """Demonstration of the ScrolledFrame widget."""
 
 import os

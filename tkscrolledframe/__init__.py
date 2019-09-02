@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """A scrollable Frame widget for Tkinter."""
 
 from .widget import ScrolledFrame

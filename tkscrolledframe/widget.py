@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """Implementation of the scrollable frame widget."""
 
 import os
