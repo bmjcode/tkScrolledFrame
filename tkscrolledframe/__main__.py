@@ -1,8 +1,5 @@
 """Demonstration of the ScrolledFrame widget."""
 
-import os
-import sys
-
 try:
     # Python 3
     from tkinter import *

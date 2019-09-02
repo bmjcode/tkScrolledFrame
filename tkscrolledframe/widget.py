@@ -1,6 +1,5 @@
 """Implementation of the scrollable frame widget."""
 
-import os
 import sys
 
 try:
