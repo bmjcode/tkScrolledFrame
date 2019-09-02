@@ -11,7 +11,6 @@ DESCRIPTION = "Scrollable frame widget for Tkinter"
 with open("README.md", "r") as readme:
     LONG_DESCRIPTION = readme.read()
 
-LONG_DESCRIPTION_CONTENT_TYPE = "text/markdown"
 URL = "https://github.com/bmjcode/tkScrolledFrame"
 PACKAGES = find_packages()
 CLASSIFIERS = [
@@ -28,7 +27,7 @@ setup(name=NAME,
       author_email=AUTHOR_EMAIL,
       description=DESCRIPTION,
       long_description=LONG_DESCRIPTION,
-      long_description_content_type=LONG_DESCRIPTION_CONTENT_TYPE,
+      long_description_content_type="text/markdown",
       url=URL,
       packages=PACKAGES,
       classifiers=CLASSIFIERS)
