@@ -7,9 +7,8 @@ tkScrolledFrame consists of a single module, `tkscrolledframe` (note the module 
 A brief example program:
 
 ```python
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-# This assumes Python 3
 from tkinter import *
 from tkscrolledframe import ScrolledFrame
 
